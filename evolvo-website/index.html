@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolvo AI - Biznesingiz uchun Sun'iy Intellekt Yechimlari</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/0EA5E9/FFFFFF?text=E" type="image/png">
+
+    <style>
+        :root { --bg-color: #f8fafc; --text-color: #0f172a; --primary-color: #0ea5e9; --secondary-color: #64748b; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        .font-exo { font-family: 'Exo 2', sans-serif; }
+        .hero-gradient-text { background: linear-gradient(to right, #0ea5e9, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .cta-button { background-color: var(--primary-color); transition: all 0.3s ease; }
+        .cta-button:hover { box-shadow: 0 0 25px rgba(14, 165, 233, 0.4); transform: translateY(-3px); }
+        .section-title { color: var(--text-color); }
+        .card { background-color: white; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.1); border-color: var(--primary-color); }
+        .aurora-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150%; height: 150%; background-image: radial-gradient(ellipse at top, #dbeafe 0%, transparent 50%), radial-gradient(ellipse at bottom, #e0f2fe 0%, transparent 50%); opacity: 0.3; z-index: -1; animation: aurora 20s infinite linear; }
+        @keyframes aurora { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        #hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.5; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center bg-white/80 backdrop-blur-md rounded-full px-6 py-3 border border-gray-200 shadow-sm">
+                <a href="index.html" class="text-2xl font-exo font-bold text-slate-800">
+                    Evolvo<span class="text-sky-500">AI</span>
+                </a>
+                <nav class="hidden md:flex space-x-8 text-slate-600">
+                    <a href="#services" class="hover:text-sky-500 transition-colors">Xizmatlar</a>
+                    <a href="#portfolio" class="hover:text-sky-500 transition-colors">Portfolio</a>
+                    <a href="#blog" class="hover:text-sky-500 transition-colors">Blog</a>
+                    <a href="#contact" class="hover:text-sky-500 transition-colors">Bog'lanish</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden container mx-auto px-6 pb-4">
+             <div class="bg-white/90 backdrop-blur-md rounded-xl p-4 flex flex-col space-y-4 text-center border border-gray-200">
+                <a href="#services" class="block text-slate-600 hover:text-sky-500 transition-colors">Xizmatlar</a>
+                <a href="#portfolio" class="block text-slate-600 hover:text-sky-500 transition-colors">Portfolio</a>
+                <a href="#blog" class="block text-slate-600 hover:text-sky-500 transition-colors">Blog</a>
+                <a href="#contact" class="block text-slate-600 hover:text-sky-500 transition-colors">Bog'lanish</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center pt-24 md:pt-0 overflow-hidden">
+            <canvas id="hero-canvas"></canvas>
+            <div class="container mx-auto px-6 text-center z-10">
+                <h1 class="text-5xl md:text-7xl font-exo font-extrabold section-title leading-tight">
+                    Biznesingizni <span class="hero-gradient-text">Sun'iy Intellekt</span> Bilan Rivojlantiring
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+                    "Evolvo AI" bilan raqamli transformatsiya va aqlli yechimlar orqali raqobatchilaringizdan bir qadam oldinda bo'ling.
+                </p>
+                <a href="#contact" class="mt-10 inline-block cta-button text-white font-bold py-4 px-10 rounded-full text-lg">
+                    Loyihani Boshlash
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 relative overflow-hidden">
+            <div class="aurora-bg"></div>
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-exo font-bold section-title">Asosiy Yechimlar</h2>
+                    <p class="text-slate-500 mt-2">Biznesingiz o'sishi uchun texnologik poydevor.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-8 rounded-2xl fade-in" style="transition-delay: 100ms;">
+                        <h3 class="text-xl font-bold section-title mb-2">Biznesni Raqamlashtirish</h3>
+                        <p class="text-secondary-color">Jarayonlaringizni avtomatlashtirib, samaradorlikni yangi bosqichga olib chiqamiz.</p>
+                    </div>
+                    <div class="card p-8 rounded-2xl fade-in" style="transition-delay: 200ms;">
+                        <h3 class="text-xl font-bold section-title mb-2">AI Yechimlari</h3>
+                        <p class="text-secondary-color">Mijozlarga xizmat ko'rsatuvchi chatbotlar va ma'lumotlarni tahlil qiluvchi aqlli tizimlar.</p>
+                    </div>
+                    <div class="card p-8 rounded-2xl fade-in" style="transition-delay: 300ms;">
+                        <h3 class="text-xl font-bold section-title mb-2">Korporativ Veb-saytlar</h3>
+                        <p class="text-secondary-color">Brendingizni to'g'ri aks ettiruvchi, zamonaviy va tezkor veb-saytlar yaratamiz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-exo font-bold section-title">Amalga Oshirilgan Loyihalar</h2>
+                    <p class="text-slate-500 mt-2">Mijozlarimiz uchun yaratgan muvaffaqiyatli keys-stadilar.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card rounded-2xl overflow-hidden group fade-in">
+                        <img src="https://placehold.co/600x400/e0f2fe/0ea5e9?text=E-commerce+Platform" alt="E-commerce loyihasi" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold section-title mb-2">Onlayn Do'kon uchun AI Tahlili</h3>
+                            <p class="text-secondary-color mb-4">Mijozlarning xarid qilish odatlarini tahlil qiluvchi va individual takliflar beruvchi AI tizimini integratsiya qildik.</p>
+                        </div>
+                    </div>
+                    <div class="card rounded-2xl overflow-hidden group fade-in">
+                        <img src="https://placehold.co/600x400/dbeafe/22d3ee?text=Logistika+Kompaniyasi" alt="Logistika loyihasi" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold section-title mb-2">Logistika Kompaniyasi uchun Chatbot</h3>
+                            <p class="text-secondary-color mb-4">Yuklarning holati haqida 24/7 ma'lumot beruvchi va buyurtmalarni qabul qiluvchi aqlli Telegram bot yaratdik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl font-exo font-bold section-title">So'nggi Maqolalar</h2>
+                    <p class="text-slate-500 mt-2">Sun'iy intellekt va biznesdagi so'nggi yangiliklar.</p>
+                </div>
+                <div id="latest-posts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card rounded-2xl p-6 text-center">Yuklanmoqda...</div>
+                    <div class="card rounded-2xl p-6 text-center">Yuklanmoqda...</div>
+                    <div class="card rounded-2xl p-6 text-center">Yuklanmoqda...</div>
+                </div>
+                <div class="text-center mt-12 fade-in">
+                    <a href="blog.html" class="cta-button text-white font-bold py-3 px-8 rounded-full text-lg">
+                        Barcha Maqolalarni Ko'rish
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-24 relative overflow-hidden">
+             <div class="aurora-bg"></div>
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl font-exo font-bold section-title">Loyihangizni Muhokama Qilamizmi?</h2>
+                    <p class="text-slate-500 mt-2">Quyidagi formani to'ldiring va biz siz bilan tez orada bog'lanamiz.</p>
+                </div>
+                <div class="max-w-2xl mx-auto card p-8 rounded-2xl fade-in">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div id="form-content">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-600 mb-2">Ismingiz</label>
+                                    <input type="text" name="name" id="name" required class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="To'liq ismingiz">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-slate-600 mb-2">Telefon raqamingiz</label>
+                                    <input type="tel" name="phone" id="phone" required class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="+998 90 123 45 67">
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <label for="message" class="block text-sm font-medium text-slate-600 mb-2">Loyiha haqida qisqacha</label>
+                                <textarea name="message" id="message" rows="4" required class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Veb-sayt, chatbot, AI integratsiyasi..."></textarea>
+                            </div>
+                            <div class="mt-8 text-center">
+                                <button type="submit" id="submit-button" class="cta-button text-white font-bold py-3 px-10 rounded-full text-lg">
+                                    So'rov Yuborish
+                                </button>
+                            </div>
+                        </div>
+                        <div id="success-message" class="hidden text-center">
+                            <h3 class="text-2xl font-bold text-green-500">Rahmat!</h3>
+                            <p class="text-slate-600 mt-2">So'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-2xl font-exo font-bold text-slate-800">Evolvo<span class="text-sky-500">AI</span></h3>
+                    <p class="text-slate-500 mt-2">Biznesingiz uchun aqlli raqamli yechimlar.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-800 mb-3">Kontaktlar</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li><a href="tel:+998974771219" class="hover:text-sky-500">+998 (97) 477-12-19</a></li>
+                        <li><a href="mailto:info@evolvoai.uz" class="hover:text-sky-500">info@evolvoai.uz</a></li>
+                        <li>Toshkent sh., Nurafshon aylanma ko'chasi, 12-uy</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-800 mb-3">Ijtimoiy Tarmoqlar</h4>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" class="text-slate-500 hover:text-sky-500">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-1.088-1.056-.96-1.637-1.528-2.651-2.405-.782-.675-.27-1.001.154-1.553.14-.183 2.617-2.38 2.617-2.58s-.017-.345-.244-.214-1.585 1.002-2.123 1.39-1.032.189-1.465-.152c-.578-.45-.972-1.423-.972-1.423s.425-.22.425-.22c1.428-.45 2.83-1.424 3.545-1.875.52-.325.85-.494.97-.494z"/></svg>
+                        </a>
+                        <a href="#" class="text-slate-500 hover:text-sky-500">
+                           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 0 1 1.772 1.153 4.902 4.902 0 0 1 1.153 1.772c.247.636.316 1.363.364 2.427.048 1.067.06 1.407.06 3.808s-.012 2.74-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 0 1-1.153 1.772 4.902 4.902 0 0 1-1.772 1.153c-.636.247-1.363.316-2.427.364-1.067.048-1.407.06-3.808.06s-2.74-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 0 1-1.772-1.153 4.902 4.902 0 0 1-1.153-1.772c-.247-.636-.316-1.363-.364-2.427C2.013 14.74 2 14.4 2 12s.013-2.74.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 0 1 1.153-1.772A4.902 4.902 0 0 1 5.45 2.525c.636-.247 1.363-.316 2.427-.364C8.92 2.013 9.26 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.06-1.004.048-1.625.211-2.126.41a3.181 3.181 0 0 0-1.153.742 3.181 3.181 0 0 0-.742 1.153c-.199.502-.362 1.123-.41 2.126-.048 1.024-.06 1.352-.06 3.807v.468c0 2.456.011 2.784.06 3.807.048 1.004.211 1.625.41 2.126a3.181 3.181 0 0 0 .742 1.153 3.181 3.181 0 0 0 1.153.742c.502.199 1.123.362 2.126.41 1.024.048 1.352.06 3.807.06h.468c2.456 0 2.784-.011 3.807-.06 1.004-.048 1.625-.211-2.126-.41a3.181 3.181 0 0 0 1.153-.742 3.181 3.181 0 0 0 .742-1.153c.199-.502.362-1.123.41-2.126.048-1.024.06-1.352.06-3.807v-.468c0-2.456-.011-2.784-.06-3.807-.048-1.004-.211-1.625-.41-2.126a3.181 3.181 0 0 0-.742-1.153 3.181 3.181 0 0 0-1.153-.742c-.502-.199-1.123-.362-2.126-.41-1.024-.048-1.352-.06-3.807-.06z M12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 1.802a3.333 3.333 0 1 1 0 6.666 3.333 3.333 0 0 1 0-6.666zm5.338-3.205a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 mt-8 text-center">
+                 <p class="text-slate-500">&copy; 2025 Evolvo AI. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+    <!-- O'zimizning skriptlar -->
+    <script src="scripts/firebase-config.js"></script>
+    <script src="scripts/main.js"></script>
+    
+    <script type="importmap">
+        { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js" } }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+
+        // --- Three.js Animation ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const particlesCount = 5000;
+        const positions = new Float32Array(particlesCount * 3);
+        for (let i = 0; i < particlesCount * 3; i++) {
+            positions[i] = (Math.random() - 0.5) * 10;
+        }
+        const particlesGeometry = new THREE.BufferGeometry();
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.005,
+            color: 0x0ea5e9
+        });
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+
+        camera.position.z = 5;
+
+        const mouse = new THREE.Vector2();
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            particles.rotation.x += 0.0001;
+            particles.rotation.y += 0.0002;
+            particles.rotation.x += (mouse.y - particles.rotation.x) * 0.01;
+            particles.rotation.y += (mouse.x - particles.rotation.y) * 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Header background on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Form submission handler
+        window.handleFormSubmit = async function(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            const submitButton = document.getElementById('submit-button');
+            const formContent = document.getElementById('form-content');
+            const successMessage = document.getElementById('success-message');
+            const name = form.name.value;
+            const phone = form.phone.value;
+            const message = form.message.value;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Yuborilmoqda...';
+            try {
+                await db.collection('contacts').add({
+                    name: name,
+                    phone: phone,
+                    message: message,
+                    submittedAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+                formContent.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                alert("Xatolik yuz berdi! Iltimos, keyinroq qayta urinib ko'ring.");
+                submitButton.disabled = false;
+                submitButton.textContent = 'So\'rov Yuborish';
+            }
+        }
+
+        // Fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

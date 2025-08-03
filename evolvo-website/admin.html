@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Evolvo AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-active { border-color: #0ea5e9; color: #0ea5e9; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="admin-panel" class="hidden">
+        <header class="bg-white shadow-sm">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <h1 class="text-xl font-bold text-gray-800">Evolvo AI Boshqaruv Paneli</h1>
+                <button id="logout-button" class="text-sm text-gray-600 hover:text-sky-500">Chiqish</button>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-6 py-8">
+            <!-- Tabs -->
+            <div class="border-b border-gray-200 mb-6">
+                <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                    <button id="tab-contacts" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300 tab-active">
+                        So'rovlar
+                    </button>
+                    <button id="tab-posts" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        Maqolalar
+                    </button>
+                    <button id="tab-portfolio" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        Portfolio
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Contacts Content -->
+            <div id="content-contacts">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Kelib Tushgan So'rovlar</h2>
+                <div id="contacts-list" class="bg-white rounded-lg shadow overflow-hidden">
+                    <!-- So'rovlar bu yerga yuklanadi -->
+                </div>
+            </div>
+
+            <!-- Posts Content (Hidden by default) -->
+            <div id="content-posts" class="hidden">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Maqolalarni Boshqarish</h2>
+                <div class="mb-6">
+                    <a href="post-editor.html" class="px-4 py-2 font-semibold text-white bg-sky-500 rounded-md hover:bg-sky-600">Yangi Maqola Qo'shish</a>
+                </div>
+                <div id="posts-list" class="bg-white rounded-lg shadow overflow-x-auto">
+                    <!-- Maqolalar ro'yxati bu yerga yuklanadi -->
+                </div>
+            </div>
+
+            <!-- Portfolio Content (Hidden by default) -->
+            <div id="content-portfolio" class="hidden">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Portfolioni Boshqarish</h2>
+                <div class="mb-6">
+                    <a href="portfolio-editor.html" class="px-4 py-2 font-semibold text-white bg-sky-500 rounded-md hover:bg-sky-600">Yangi Loyiha Qo'shish</a>
+                </div>
+                <div id="portfolio-list" class="bg-white rounded-lg shadow overflow-x-auto">
+                    <!-- Portfolio ro'yxati bu yerga yuklanadi -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="scripts/firebase-config.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!-- portfolio-item.html -->
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyiha - Evolvo AI</title>
+    <meta name="description" content="">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://placehold.co/32x32/0EA5E9/FFFFFF?text=E" type="image/png">
+    <style>
+        :root { --bg-color: #f8fafc; --text-color: #0f172a; --primary-color: #0ea5e9; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        .font-exo { font-family: 'Exo 2', sans-serif; }
+        .prose { max-width: 75ch; margin: 0 auto; }
+        .prose h1 { font-family: 'Exo 2', sans-serif; }
+
+        /* --- MOBIL OPTIMIZATSIYA UCHUN YANGI STILLAR --- */
+        .responsive-video-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .responsive-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* --- YANGI STILLAR TUGADI --- */
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-exo font-bold text-slate-800">Evolvo<span class="text-sky-500">AI</span></a>
+            <a href="portfolio.html" class="text-slate-600 hover:text-sky-500 transition-colors">← Portfolioga qaytish</a>
+        </div>
+    </header>
+    <main class="py-16">
+        <div id="portfolio-item-content" class="container mx-auto px-6 prose lg:prose-xl">
+            <h1 class="text-center">Yuklanmoqda...</h1>
+        </div>
+    </main>
+    <footer class="py-12 bg-gray-50 mt-16">
+        <div class="container mx-auto px-6 text-center"><p class="text-slate-500">&copy; 2025 Evolvo AI.</p></div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="scripts/firebase-config.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Evolvo AI | Biznes va Sun'iy Intellekt Haqida Maqolalar</title>
+    <!-- SEO uchun tavsif -->
+    <meta name="description" content="Evolvo AI blogida O'zbekistonda biznesni raqamlashtirish, sun'iy intellekt yechimlari va zamonaviy veb-texnologiyalar haqidagi so'nggi maqolalar bilan tanishing.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://placehold.co/32x32/0EA5E9/FFFFFF?text=E" type="image/png">
+    <style>
+        :root { --bg-color: #f8fafc; --text-color: #0f172a; --primary-color: #0ea5e9; --secondary-color: #64748b; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        .font-exo { font-family: 'Exo 2', sans-serif; }
+        .card { background-color: white; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.1); border-color: var(--primary-color); }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-exo font-bold text-slate-800">
+                    Evolvo<span class="text-sky-500">AI</span>
+                </a>
+                <a href="index.html#contact" class="bg-sky-500 text-white font-bold py-2 px-6 rounded-full hover:bg-sky-600 transition-colors">Bog'lanish</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-exo font-bold section-title">Blog</h1>
+                <p class="text-slate-500 mt-2">Biznes, texnologiya va sun'iy intellekt haqida so'nggi maqolalar.</p>
+            </div>
+            <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Maqolalar bu yerga JavaScript orqali yuklanadi -->
+                <div class="card rounded-2xl p-6 text-center col-span-full">Yuklanmoqda...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 bg-gray-50 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-500">&copy; 2025 Evolvo AI. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+    <!-- O'zimizning skriptlar -->
+    <script src="scripts/firebase-config.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
